@@ -4,7 +4,7 @@
 
 A short script to strengthen the default security posture of a Pivotal Operations Manager instance. The script provides the following enhancements:
 
-**Add [LetsEncrypt](https://letsencrypt.org/) SSL Certificate:**
+**Acquire [LetsEncrypt](https://letsencrypt.org/) SSL Certificate:**
 * Install [certbot](https://certbot.eff.org/) tooling
 * Request valid LetEncrypt SSL cert against the OpsManager URL
 * Replace OpsManager self-signed cert with LetsEncrypt provided SSL cert
@@ -22,7 +22,9 @@ A short script to strengthen the default security posture of a Pivotal Operation
 Implementing the above controls should produce an A+ rating using the [Qualys SSL Server Test](https://www.ssllabs.com/ssltest/).
 
 ## Requirements
-Outbound Internet access from the OpsManager instance to pull the relevant certbot (LetsEncrypt) tooling for cert instantiation. 
+From the Ops Manager VM:
+- outbound Internet access against *.api.letsencrypt.org to pull relevant certbot (LetsEncrypt) tooling for cert instantiation. 
+- Internet inbound HTTPS (TCP443) from 0.0.0.0/0 for cert verification
 
 Tested against OpsManager releases 1.9.x, 1.10.x, 1.11.x
 
