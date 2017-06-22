@@ -11,7 +11,7 @@ A short script to strengthen the default security posture of a Pivotal Operation
 * Update crontab to auto-renew certificate ongoing
 
 **Tighten up NGINX SSL security controls:**
-* Restrict allowable ssl ciphers to ephemeral AES only 128/256bit *ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384*
+* Restrict negotiable ciphers to elliptical curve diffie-hellman for key exchange and forward secrecy (FS/PFS), AES128-GCM/AES256-GCM cipher for encryption  *ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384*
 * Restrict allowable SSL protocols to TLS 1.2 only
 * Enable ssl_prefer_server_ciphers
 * Enable ssl_stapling enabled with verification
